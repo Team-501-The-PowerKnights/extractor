@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/Team-501-The-PowerKnights/extractor/pkg/config"
+	"github.com/Team-501-The-PowerKnights/extractor/pkg/sync"
 	"github.com/gleich/lumber/v2"
 	"github.com/spf13/cobra"
 )
@@ -14,6 +15,12 @@ var RootCmd = &cobra.Command{
 		if err != nil {
 			lumber.Fatal(err, "Failed to load config file")
 		}
+
+		err = sync.VerifyEnv(conf)
+		if err != nil {
+			lumber.Fatal(err, "Failed to verify environment")
+		}
+
 		lumber.Debug(conf)
 	},
 }
