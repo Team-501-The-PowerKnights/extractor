@@ -21,6 +21,9 @@ var RootCmd = &cobra.Command{
 			lumber.Fatal(err, "Failed to verify environment")
 		}
 
-		lumber.Debug(conf)
+		err = sync.RunSFTP(conf)
+		if err != nil {
+			lumber.Fatal(err, "Failed to run sftp")
+		}
 	},
 }
