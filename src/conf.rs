@@ -1,4 +1,4 @@
-use std::fs;
+use std::{fs, path::PathBuf};
 
 use anyhow::Result;
 use serde::Deserialize;
@@ -9,7 +9,7 @@ pub struct Configuration {
     #[serde(default = "defaults::port")]
     pub port: u32,
     #[serde(default = "defaults::destination")]
-    pub destination: String,
+    pub destination: PathBuf,
     pub source: String,
     #[serde(default = "defaults::username")]
     pub username: String,
@@ -18,6 +18,8 @@ pub struct Configuration {
 }
 
 mod defaults {
+    use std::path::PathBuf;
+
     pub fn password() -> String {
         String::from("")
     }
@@ -28,13 +30,8 @@ mod defaults {
     pub fn username() -> String {
         String::from("lvuser")
     }
-    pub fn destination() -> String {
-        dirs::desktop_dir()
-            .unwrap()
-            .join("extractor_logs")
-            .to_str()
-            .unwrap()
-            .to_string()
+    pub fn destination() -> PathBuf {
+        dirs::desktop_dir().unwrap().join("extractor_logs")
     }
 }
 
