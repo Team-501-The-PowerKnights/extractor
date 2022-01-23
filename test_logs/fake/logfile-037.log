@@ -1,0 +1,564 @@
+19:00:35.465 INFO [main] f.r.Team501Robot[34] constructing
+19:00:35.505 INFO [main] f.r.Team501Robot[37] programmer=Stu
+19:00:35.519 INFO [main] f.r.Team501Robot[40] codeVersion=501-Robot 0.3.00 20211106 160500
+19:00:35.523 INFO [main] f.r.Team501Robot[42] constructed
+19:00:35.529 INFO [main] f.r.Robot[89] initializing
+19:00:35.609 INFO [main] f.r.p.PreferencesInitializer[38] initializing
+19:00:35.623 INFO [main] f.r.p.PreferencesInitializer[112] preferences as initialized:
+
+19:00:35.718 INFO [main] f.r.p.PreferencesInitializer[125]  preferences:
+...Shooter.scale = 1.0
+...Drive.P = 0.0
+...Turret.P = 0.5
+...Drive.I = 0.0
+...Drive.F = 0.0
+...Drive.D = 0.0
+...Turret.I = 0.005
+...Turret.F = 0.0
+...Shooter.P = 0.002
+....type = 3171960.0
+...Shooter.D = 1.0
+...Turret.D = 1.0
+...Shooter.I = 0.0
+...Shooter.F = 2.0E-4
+19:00:35.726 INFO [main] f.r.p.PreferencesInitializer[115] initialized
+19:00:35.744 INFO [main] f.r.p.PropertiesManager[78] constructing
+19:00:35.747 DEBUG [main] f.r.p.PropertiesManager[80] file: /home/lvuser/501robot.props
+19:00:35.837 INFO [main] f.r.p.PropertiesManager[96] properties as read:
+{Ballevator.className=BallevatorSubsystem, Ballevator.defaultCommandName=BallevatorSimpleManual, Climber.className=ClimberSubsystem, Climber.defaultCommandName=ClimberDoNothing, Drive.className=DriveSubsystem, Drive.defaultCommandName=DriveJoystickControl, Gyro.className=GyroSensor, Hopper.className=HopperSubsystem, Hopper.defaultCommandName=HopperSimpleManual, Intake.className=IntakeSubsystem, Intake.defaultCommandName=IntakeSimpleManual, PDP.className=PDPModule, RPI.className=StubRPIModule, Robot.name=Real-Bot, Shooter.className=ShooterSubsystem, Shooter.defaultCommandName=ShooterIdle, Turret.className=TurretSubsystem, Turret.defaultCommandName=TurretDoNothing, TurretLocation.className=TurretLocationSensor, Vision.className=VisionSensor, Wheel.className=WheelSubsystem, Wheel.defaultCommandName=WheelDoNothing, WheelColor.className=StubWheelColorSensor}
+19:00:35.866 INFO [main] f.r.p.PropertiesManager[104] constructed
+19:00:35.879 INFO [main] f.r.p.PKProperties[88] owner Shooter properties:
+...defaultCommandName = ShooterIdle
+...className = ShooterSubsystem
+19:00:35.883 INFO [main] f.r.p.PKProperties[88] owner Wheel properties:
+...defaultCommandName = WheelDoNothing
+...className = WheelSubsystem
+19:00:35.887 INFO [main] f.r.p.PKProperties[88] owner TurretLocation properties:
+...className = TurretLocationSensor
+19:00:35.890 INFO [main] f.r.p.PKProperties[88] owner Climber properties:
+...defaultCommandName = ClimberDoNothing
+...className = ClimberSubsystem
+19:00:35.894 INFO [main] f.r.p.PKProperties[88] owner Ballevator properties:
+...defaultCommandName = BallevatorSimpleManual
+...className = BallevatorSubsystem
+19:00:35.898 INFO [main] f.r.p.PKProperties[88] owner RPI properties:
+...className = StubRPIModule
+19:00:35.902 INFO [main] f.r.p.PKProperties[88] owner Turret properties:
+...defaultCommandName = TurretDoNothing
+...className = TurretSubsystem
+19:00:35.906 INFO [main] f.r.p.PKProperties[88] owner Gyro properties:
+...className = GyroSensor
+19:00:35.909 INFO [main] f.r.p.PKProperties[88] owner WheelColor properties:
+...className = StubWheelColorSensor
+19:00:35.912 INFO [main] f.r.p.PKProperties[88] owner Vision properties:
+...className = VisionSensor
+19:00:35.915 INFO [main] f.r.p.PKProperties[88] owner Hopper properties:
+...defaultCommandName = HopperSimpleManual
+...className = HopperSubsystem
+19:00:35.922 INFO [main] f.r.p.PKProperties[88] owner Drive properties:
+...defaultCommandName = DriveJoystickControl
+...className = DriveSubsystem
+19:00:35.925 INFO [main] f.r.p.PKProperties[88] owner Intake properties:
+...defaultCommandName = IntakeSimpleManual
+...className = IntakeSubsystem
+19:00:35.929 INFO [main] f.r.p.PKProperties[88] owner PDP properties:
+...className = PDPModule
+19:00:35.932 INFO [main] f.r.p.PKProperties[88] owner Robot properties:
+...name = Real-Bot
+19:00:35.945 INFO [main] f.r.t.TelemetryManager[58] constructing
+19:00:35.949 INFO [main] f.r.t.TelemetryManager[62] constructed
+19:00:36.038 INFO [main] f.robot.OI[114] constructing OI
+19:00:36.052 INFO [main] f.robot.OI[146] constructed
+19:00:36.067 INFO [main] f.r.t.SchedulerProvider[75] constructing
+19:00:36.072 INFO [main] f.r.t.SchedulerProvider[84] constructed
+19:00:36.101 INFO [main] f.r.p.PKProperties[88] owner PDP properties:
+...className = PDPModule
+19:00:36.107 DEBUG [main] f.r.m.p.PDPFactory[57] class to load: frc.robot.modules.pdp.PDPModule
+19:00:36.110 INFO [main] f.r.m.p.PDPFactory[59] constructing PDPModule for PDP module
+19:00:36.141 INFO [main] f.r.m.p.PDPModule[27] constructing
+19:00:36.182 INFO [main] f.r.m.p.PDPModule[31] constructed
+19:00:36.194 INFO [main] f.r.p.PKProperties[88] owner RPI properties:
+...className = StubRPIModule
+19:00:36.198 DEBUG [main] f.r.m.r.RPIFactory[55] class to load: frc.robot.modules.rpi.StubRPIModule
+19:00:36.201 INFO [main] f.r.m.r.RPIFactory[57] constructing StubRPIModule for RPI module
+19:00:36.231 INFO [main] f.r.m.r.StubRPIModule[23] constructing
+19:00:36.238 INFO [main] f.r.m.r.StubRPIModule[25] constructed
+19:00:36.252 INFO [main] f.r.s.SensorFactory[36] constructing
+19:00:36.270 INFO [main] f.r.p.PKProperties[88] owner Gyro properties:
+...className = GyroSensor
+19:00:36.275 DEBUG [main] f.r.s.g.GyroFactory[56] class to load frc.robot.sensors.gyro.GyroSensor
+19:00:36.278 INFO [main] f.r.s.g.GyroFactory[58] constructing GyroSensor for Gyro sensor
+19:00:36.356 INFO [main] f.r.s.g.BaseGyroSensor[29] constructing
+19:00:36.365 INFO [main] f.r.s.g.BaseGyroSensor[34] constructed
+19:00:36.374 INFO [main] f.r.s.g.SuitcaseGyroSensor[27] constructing
+19:00:36.714 DEBUG [main] f.r.s.g.AHRSGyro[61] waiting ... ahrs not connected
+19:00:36.771 DEBUG [main] f.r.s.g.AHRSGyro[74] ahrs connected
+19:00:36.773 DEBUG [main] f.r.s.g.AHRSGyro[91] yaw=-0.09
+19:00:36.776 DEBUG [main] f.r.s.g.AHRSGyro[106] zeroYaw::done ... yaw=-0.09
+19:00:36.788 TRACE [main] f.r.s.g.AHRSGyro[107] zeroYaw: done ... pidGet=-0.09000000357627869
+19:00:36.796 TRACE [main] f.r.s.g.AHRSGyro[108] zeroYaw::done ... angle=-0.09000000357627869
+19:00:36.818 INFO [main] f.r.s.g.SuitcaseGyroSensor[31] constructed
+19:00:36.826 INFO [main] f.r.s.g.GyroSensor[24] constructing
+19:00:36.833 INFO [main] f.r.s.g.GyroSensor[26] constructed
+19:00:36.871 INFO [main] f.r.p.PKProperties[88] owner TurretLocation properties:
+...className = TurretLocationSensor
+19:00:36.879 DEBUG [main] f.r.s.t.TurretLocationFactory[56] class to load frc.robot.sensors.turretlocation.TurretLocationSensor
+19:00:36.885 INFO [main] f.r.s.t.TurretLocationFactory[58] constructing TurretLocationSensor for TurretLocation sensor
+19:00:36.929 INFO [main] f.r.s.t.BaseTurretLocationSensor[26] constructing
+19:00:36.935 INFO [main] f.r.s.t.BaseTurretLocationSensor[28] constructed
+19:00:36.941 INFO [main] f.r.s.t.TurretLocationSensor[28] constructing
+19:00:36.978 INFO [main] f.r.s.t.TurretLocationSensor[32] constructed
+19:00:37.010 INFO [main] f.r.p.PKProperties[88] owner Vision properties:
+...className = VisionSensor
+19:00:37.017 DEBUG [main] f.r.s.v.VisionFactory[56] class to load frc.robot.sensors.vision.VisionSensor
+19:00:37.023 INFO [main] f.r.s.v.VisionFactory[58] constructing VisionSensor for Vision sensor
+19:00:37.103 INFO [main] f.r.s.v.BaseVisionSensor[27] constructing
+19:00:37.113 INFO [main] f.r.s.v.BaseVisionSensor[31] constructed
+19:00:37.119 INFO [main] f.r.s.v.VisionSensor[28] constructing
+19:00:37.154 INFO [main] f.r.s.v.VisionSensor[32] constructed
+19:00:37.183 INFO [main] f.r.p.PKProperties[88] owner WheelColor properties:
+...className = StubWheelColorSensor
+19:00:37.191 DEBUG [main] f.r.s.w.WheelColorFactory[56] class to load frc.robot.sensors.wheelcolor.StubWheelColorSensor
+19:00:37.197 INFO [main] f.r.s.w.WheelColorFactory[58] constructing StubWheelColorSensor for WheelColor sensor
+19:00:37.240 INFO [main] f.r.s.w.BaseWheelColorSensor[31] constructing
+19:00:37.347 INFO [main] f.r.s.w.BaseWheelColorSensor[36] constructed
+19:00:37.352 INFO [main] f.r.s.w.StubWheelColorSensor[27] constructing
+19:00:37.359 INFO [main] f.r.s.w.StubWheelColorSensor[29] constructed
+19:00:37.364 INFO [main] f.r.s.SensorFactory[74] constructed
+19:00:37.390 INFO [main] f.r.s.SubsystemFactory[40] constructing
+19:00:37.437 INFO [main] f.r.p.PKProperties[88] owner Drive properties:
+...defaultCommandName = DriveJoystickControl
+...className = DriveSubsystem
+19:00:37.448 DEBUG [main] f.r.s.d.DriveFactory[57] class to load: frc.robot.subsystems.drive.DriveSubsystem
+19:00:37.455 INFO [main] f.r.s.d.DriveFactory[59] constructing DriveSubsystem for Drive subsystem
+19:00:37.588 INFO [main] f.r.s.d.BaseDriveSubsystem[36] constructing
+19:00:37.595 INFO [main] f.r.s.d.BaseDriveSubsystem[38] constructed
+19:00:37.600 INFO [main] f.r.s.d.DriveSubsystem[92] constructing
+19:00:37.891 INFO [main] f.r.s.d.DriveSubsystem[128] constructed
+19:00:37.923 INFO [main] f.r.p.PKProperties[88] owner Intake properties:
+...defaultCommandName = IntakeSimpleManual
+...className = IntakeSubsystem
+19:00:37.933 DEBUG [main] f.r.s.i.IntakeFactory[56] class to load: frc.robot.subsystems.intake.IntakeSubsystem
+19:00:37.939 INFO [main] f.r.s.i.IntakeFactory[58] constructing IntakeSubsystem for Intake subsystem
+19:00:37.991 INFO [main] f.r.s.i.BaseIntakeSubsystem[37] constructing
+19:00:38.008 INFO [main] f.r.s.i.BaseIntakeSubsystem[39] constructed
+19:00:38.021 INFO [main] f.r.s.i.IntakeSubsystem[36] constructing
+19:00:38.351 INFO [main] f.r.s.i.IntakeSubsystem[43] constructed
+19:00:38.411 INFO [main] f.r.p.PKProperties[88] owner Hopper properties:
+...defaultCommandName = HopperSimpleManual
+...className = HopperSubsystem
+19:00:38.418 DEBUG [main] f.r.s.h.HopperFactory[56] class to load: frc.robot.subsystems.hopper.HopperSubsystem
+19:00:38.424 INFO [main] f.r.s.h.HopperFactory[58] constructing HopperSubsystem for Hopper subsystem
+19:00:38.475 INFO [main] f.r.s.h.BaseHopperSubsystem[37] constructing
+19:00:38.480 INFO [main] f.r.s.h.BaseHopperSubsystem[39] constructed
+19:00:38.487 INFO [main] f.r.s.h.HopperSubsystem[33] constructing
+19:00:38.496 INFO [main] f.r.s.h.HopperSubsystem[40] constructed
+19:00:38.530 INFO [main] f.r.p.PKProperties[88] owner Ballevator properties:
+...defaultCommandName = BallevatorSimpleManual
+...className = BallevatorSubsystem
+19:00:38.539 DEBUG [main] f.r.s.b.BallevatorFactory[56] class to load: frc.robot.subsystems.ballevator.BallevatorSubsystem
+19:00:38.552 INFO [main] f.r.s.b.BallevatorFactory[58] constructing BallevatorSubsystem for Ballevator subsystem
+19:00:38.622 INFO [main] f.r.s.b.BaseBallevatorSubsystem[37] constructing
+19:00:38.634 INFO [main] f.r.s.b.BaseBallevatorSubsystem[39] constructed
+19:00:38.644 INFO [main] f.r.s.b.BallevatorSubsystem[36] constructing
+19:00:38.675 INFO [main] f.r.s.b.BallevatorSubsystem[46] constructed
+19:00:38.715 INFO [main] f.r.p.PKProperties[88] owner Turret properties:
+...defaultCommandName = TurretDoNothing
+...className = TurretSubsystem
+19:00:38.723 DEBUG [main] f.r.s.t.TurretFactory[56] class to load: frc.robot.subsystems.turret.TurretSubsystem
+19:00:38.730 INFO [main] f.r.s.t.TurretFactory[58] constructing TurretSubsystem for Turret subsystem
+19:00:38.777 INFO [main] f.r.s.t.BaseTurretSubsystem[48] constructing
+19:00:38.783 INFO [main] f.r.s.t.BaseTurretSubsystem[85] new preferences for Turret:
+19:00:38.791 INFO [main] f.r.s.t.BaseTurretSubsystem[87] Turret.P = 0.5
+19:00:38.817 INFO [main] f.r.s.t.BaseTurretSubsystem[90] Turret.I = 0.005
+19:00:38.823 INFO [main] f.r.s.t.BaseTurretSubsystem[93] Turret.D = 1.0
+19:00:38.828 INFO [main] f.r.s.t.BaseTurretSubsystem[96] Turret.F = 0.0
+19:00:38.833 INFO [main] f.r.s.t.BaseTurretSubsystem[54] constructed
+19:00:38.838 INFO [main] f.r.s.t.TurretSubsystem[58] constructing
+19:00:38.879 INFO [main] f.r.s.t.TurretSubsystem[85] constructed
+19:00:38.909 INFO [main] f.r.p.PKProperties[88] owner Shooter properties:
+...defaultCommandName = ShooterIdle
+...className = ShooterSubsystem
+19:00:38.917 DEBUG [main] f.r.s.s.ShooterFactory[56] class to load: frc.robot.subsystems.shooter.ShooterSubsystem
+19:00:38.938 INFO [main] f.r.s.s.ShooterFactory[58] constructing ShooterSubsystem for Shooter subsystem
+19:00:39.048 INFO [main] f.r.s.s.BaseShooterSubsystem[48] constructing
+19:00:39.061 INFO [main] f.r.s.s.BaseShooterSubsystem[85] new preferences for Shooter:
+19:00:39.074 INFO [main] f.r.s.s.BaseShooterSubsystem[87] Shooter.P = 0.002
+19:00:39.085 INFO [main] f.r.s.s.BaseShooterSubsystem[90] Shooter.I = 0.0
+19:00:39.096 INFO [main] f.r.s.s.BaseShooterSubsystem[93] Shooter.D = 1.0
+19:00:39.107 INFO [main] f.r.s.s.BaseShooterSubsystem[96] Shooter.F = 2.0E-4
+19:00:39.120 INFO [main] f.r.s.s.BaseShooterSubsystem[54] constructed
+19:00:39.131 INFO [main] f.r.s.s.ShooterSubsystem[56] constructing
+19:00:39.156 INFO [main] f.r.s.s.BaseShooterSubsystem[85] new preferences for Shooter:
+19:00:39.162 INFO [main] f.r.s.s.BaseShooterSubsystem[87] Shooter.P = 0.002
+19:00:39.174 INFO [main] f.r.s.s.BaseShooterSubsystem[90] Shooter.I = 0.0
+19:00:39.177 INFO [main] f.r.s.s.BaseShooterSubsystem[93] Shooter.D = 1.0
+19:00:39.181 INFO [main] f.r.s.s.BaseShooterSubsystem[96] Shooter.F = 2.0E-4
+19:00:39.190 INFO [main] f.r.s.s.ShooterSubsystem[79] constructed
+19:00:39.224 INFO [main] f.r.p.PKProperties[88] owner Wheel properties:
+...defaultCommandName = WheelDoNothing
+...className = WheelSubsystem
+19:00:39.231 DEBUG [main] f.r.s.w.WheelFactory[56] class to load: frc.robot.subsystems.wheel.WheelSubsystem
+19:00:39.236 INFO [main] f.r.s.w.WheelFactory[58] constructing WheelSubsystem for Wheel subsystem
+19:00:39.286 INFO [main] f.r.s.w.BaseWheelSubsystem[37] constructing
+19:00:39.292 INFO [main] f.r.s.w.BaseWheelSubsystem[39] constructed
+19:00:39.300 INFO [main] f.r.s.w.WheelSubsystem[34] constructing
+19:00:39.307 INFO [main] f.r.s.w.WheelSubsystem[41] constructed
+19:00:39.335 INFO [main] f.r.p.PKProperties[88] owner Climber properties:
+...defaultCommandName = ClimberDoNothing
+...className = ClimberSubsystem
+19:00:39.342 DEBUG [main] f.r.s.c.ClimberFactory[56] class to load: frc.robot.subsystems.climber.ClimberSubsystem
+19:00:39.346 INFO [main] f.r.s.c.ClimberFactory[58] constructing ClimberSubsystem for Climber subsystem
+19:00:39.434 INFO [main] f.r.s.c.BaseClimberSubsystem[37] constructing
+19:00:39.446 INFO [main] f.r.s.c.BaseClimberSubsystem[39] constructed
+19:00:39.455 INFO [main] f.r.s.c.ClimberSubsystem[36] constructing
+19:00:39.530 INFO [main] f.r.s.c.ClimberSubsystem[47] constructed
+19:00:39.592 DEBUG [main] f.r.s.d.BaseDriveSubsystem[47] class to load: frc.robot.commands.drive.DriveJoystickControl
+19:00:39.601 INFO [main] f.r.s.d.BaseDriveSubsystem[49] constructing DriveJoystickControl for Drive subsystem
+19:00:39.707 INFO [main] f.r.c.PKCommandBase[60] constructing for DriveJoystickControl
+19:00:39.719 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:39.729 INFO [main] f.r.c.d.DriveCommandBase[30] constructing DriveJoystickControl
+19:00:39.741 INFO [main] f.r.c.d.DriveCommandBase[36] constructed
+19:00:39.747 INFO [main] f.r.c.d.DriveOICommandBase[28] constructing DriveJoystickControl
+19:00:39.753 INFO [main] f.r.c.d.DriveOICommandBase[32] constructed
+19:00:39.758 INFO [main] f.r.c.d.DriveJoystickControl[23] constructing DriveJoystickControl
+19:00:39.774 INFO [main] f.r.c.d.DriveJoystickControl[25] constructed
+19:00:39.792 DEBUG [main] f.r.s.i.BaseIntakeSubsystem[48] class to load: frc.robot.commands.intake.IntakeSimpleManual
+19:00:39.798 INFO [main] f.r.s.i.BaseIntakeSubsystem[50] constructing IntakeSimpleManual for Intake subsystem
+19:00:39.857 INFO [main] f.r.c.PKCommandBase[60] constructing for IntakeSimpleManual
+19:00:39.861 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:39.866 INFO [main] f.r.c.i.IntakeCommandBase[30] constructing IntakeSimpleManual
+19:00:39.872 INFO [main] f.r.c.i.IntakeCommandBase[36] constructed
+19:00:39.876 INFO [main] f.r.c.i.IntakeOICommandBase[28] constructing IntakeSimpleManual
+19:00:39.883 INFO [main] f.r.c.i.IntakeOICommandBase[32] constructed
+19:00:39.889 INFO [main] f.r.c.i.IntakeSimpleManual[20] constructing IntakeSimpleManual
+19:00:39.893 INFO [main] f.r.c.i.IntakeSimpleManual[22] constructed
+19:00:39.908 DEBUG [main] f.r.s.h.BaseHopperSubsystem[48] class to load: frc.robot.commands.hopper.HopperSimpleManual
+19:00:39.913 INFO [main] f.r.s.h.BaseHopperSubsystem[50] constructing HopperSimpleManual for Hopper subsystem
+19:00:39.993 INFO [main] f.r.c.PKCommandBase[60] constructing for HopperSimpleManual
+19:00:39.998 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:40.002 INFO [main] f.r.c.h.HopperCommandBase[30] constructing HopperSimpleManual
+19:00:40.008 INFO [main] f.r.c.h.HopperCommandBase[36] constructed
+19:00:40.012 INFO [main] f.r.c.h.HopperOICommandBase[28] constructing HopperSimpleManual
+19:00:40.017 INFO [main] f.r.c.h.HopperOICommandBase[32] constructed
+19:00:40.021 INFO [main] f.r.c.h.HopperSimpleManual[20] constructing HopperSimpleManual
+19:00:40.026 INFO [main] f.r.c.h.HopperSimpleManual[22] constructed
+19:00:40.040 DEBUG [main] f.r.s.b.BaseBallevatorSubsystem[48] class to load: frc.robot.commands.ballevator.BallevatorSimpleManual
+19:00:40.044 INFO [main] f.r.s.b.BaseBallevatorSubsystem[50] constructing BallevatorSimpleManual for Ballevator subsystem
+19:00:40.091 INFO [main] f.r.c.PKCommandBase[60] constructing for BallevatorSimpleManual
+19:00:40.095 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:40.115 INFO [main] f.r.c.b.BallevatorCommandBase[30] constructing BallevatorSimpleManual
+19:00:40.115 INFO [main] f.r.c.b.BallevatorCommandBase[30] constructing BallevatorSimpleManual
+19:00:40.132 INFO [main] f.r.c.b.BallevatorCommandBase[36] constructed
+19:00:40.132 INFO [main] f.r.c.b.BallevatorCommandBase[36] constructed
+19:00:40.147 INFO [main] f.r.c.b.BallevatorCommandBase[28] constructing BallevatorSimpleManual
+19:00:40.147 INFO [main] f.r.c.b.BallevatorCommandBase[28] constructing BallevatorSimpleManual
+19:00:40.162 INFO [main] f.r.c.b.BallevatorCommandBase[32] constructed
+19:00:40.162 INFO [main] f.r.c.b.BallevatorCommandBase[32] constructed
+19:00:40.178 INFO [main] f.r.c.b.BallevatorSimpleManual[20] constructing BallevatorSimpleManual
+19:00:40.186 INFO [main] f.r.c.b.BallevatorSimpleManual[22] constructed
+19:00:40.219 DEBUG [main] f.r.s.t.BaseTurretSubsystem[63] class to load: frc.robot.commands.turret.TurretDoNothing
+19:00:40.228 INFO [main] f.r.s.t.BaseTurretSubsystem[65] constructing TurretDoNothing for Turret subsystem
+19:00:40.289 INFO [main] f.r.c.PKCommandBase[60] constructing for TurretDoNothing
+19:00:40.297 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:40.306 INFO [main] f.r.c.t.TurretCommandBase[30] constructing TurretDoNothing
+19:00:40.314 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:40.320 INFO [main] f.r.c.t.TurretDoNothing[20] constructing TurretDoNothing
+19:00:40.323 INFO [main] f.r.c.t.TurretDoNothing[22] constructed
+19:00:40.338 DEBUG [main] f.r.s.s.BaseShooterSubsystem[63] class to load: frc.robot.commands.shooter.ShooterIdle
+19:00:40.345 INFO [main] f.r.s.s.BaseShooterSubsystem[65] constructing ShooterIdle for Shooter subsystem
+19:00:40.372 INFO [main] f.r.c.PKCommandBase[60] constructing for ShooterIdle
+19:00:40.403 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:40.405 INFO [main] f.r.c.s.ShooterCommandBase[30] constructing ShooterIdle
+19:00:40.409 INFO [main] f.r.c.s.ShooterCommandBase[36] constructed
+19:00:40.418 INFO [main] f.r.c.s.ShooterIdle[23] constructing ShooterIdle
+19:00:40.421 INFO [main] f.r.c.s.ShooterIdle[25] constructed
+19:00:40.429 DEBUG [main] f.r.s.w.BaseWheelSubsystem[48] class to load: frc.robot.commands.wheel.WheelDoNothing
+19:00:40.435 INFO [main] f.r.s.w.BaseWheelSubsystem[50] constructing WheelDoNothing for Wheel subsystem
+19:00:40.496 INFO [main] f.r.c.PKCommandBase[60] constructing for WheelDoNothing
+19:00:40.505 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:40.515 INFO [main] f.r.c.w.WheelCommandBase[30] constructing WheelDoNothing
+19:00:40.523 INFO [main] f.r.c.w.WheelCommandBase[36] constructed
+19:00:40.533 INFO [main] f.r.c.w.WheelDoNothing[20] constructing WheelDoNothing
+19:00:40.542 INFO [main] f.r.c.w.WheelDoNothing[22] constructed
+19:00:40.576 DEBUG [main] f.r.s.c.BaseClimberSubsystem[48] class to load: frc.robot.commands.climber.ClimberDoNothing
+19:00:40.583 INFO [main] f.r.s.c.BaseClimberSubsystem[50] constructing ClimberDoNothing for Climber subsystem default command
+19:00:40.644 INFO [main] f.r.c.PKCommandBase[60] constructing for ClimberDoNothing
+19:00:40.652 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:40.659 INFO [main] f.r.c.c.ClimberCommandBase[30] constructing ClimberDoNothing
+19:00:40.667 INFO [main] f.r.c.c.ClimberCommandBase[36] constructed
+19:00:40.672 INFO [main] f.r.c.c.ClimberDoNothing[22] constructing ClimberDoNothing
+19:00:40.678 INFO [main] f.r.c.c.ClimberDoNothing[26] constructed
+19:00:40.685 INFO [main] f.r.s.SubsystemFactory[131] constructed
+19:00:40.707 INFO [main] f.r.c.PKCommandBase[60] constructing for DriveSwap
+19:00:40.717 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:40.724 INFO [main] f.r.c.d.DriveCommandBase[30] constructing DriveSwap
+19:00:40.733 INFO [main] f.r.c.d.DriveCommandBase[36] constructed
+19:00:40.741 INFO [main] f.r.c.d.DriveSwap[29] constructing DriveSwap
+19:00:40.751 INFO [main] f.r.c.d.DriveSwap[31] constructed
+19:00:40.870 INFO [main] f.r.c.PKCommandBase[60] constructing for ClimberRetractInPit
+19:00:40.876 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:40.878 INFO [main] f.r.c.c.ClimberCommandBase[30] constructing ClimberRetractInPit
+19:00:40.885 INFO [main] f.r.c.c.ClimberCommandBase[36] constructed
+19:00:40.888 INFO [main] f.r.c.c.ClimberOICommandBase[28] constructing ClimberRetractInPit
+19:00:40.893 INFO [main] f.r.c.c.ClimberOICommandBase[32] constructed
+19:00:40.897 INFO [main] f.r.c.c.ClimberRetractInPit[25] constructing ClimberRetractInPit
+19:00:40.903 INFO [main] f.r.c.c.ClimberRetractInPit[27] constructed
+19:00:40.972 INFO [main] f.r.c.PKCommandBase[60] constructing for TurretVisionAlign
+19:00:40.976 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:40.979 INFO [main] f.r.c.t.TurretCommandBase[30] constructing TurretVisionAlign
+19:00:40.981 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:40.984 INFO [main] f.r.c.t.TurretVisionAlign[25] constructing TurretVisionAlign
+19:00:40.987 INFO [main] f.r.c.t.TurretVisionAlign[29] constructed
+19:00:41.002 INFO [main] f.r.c.PKCommandBase[60] constructing for ShooterSpinUpFormula
+19:00:41.006 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.009 INFO [main] f.r.c.s.ShooterSpinUpFormula[30] constructing ShooterSpinUpFormula
+19:00:41.013 INFO [main] f.r.c.s.ShooterSpinUpFormula[35] constructed
+19:00:41.019 INFO [main] f.r.c.PKParallelCommandGroup[44] constructing for PKParallelCommandGroup
+19:00:41.023 INFO [main] f.r.c.PKParallelCommandGroup[48] constructed
+19:00:41.040 INFO [main] f.r.c.PKCommandBase[60] constructing for RobotSetFar
+19:00:41.042 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.045 INFO [main] f.r.c.RobotSetFar[27] constructing RobotSetFar
+19:00:41.048 INFO [main] f.r.c.RobotSetFar[31] constructed
+19:00:41.063 INFO [main] f.r.c.PKCommandBase[60] constructing for RobotSetMid
+19:00:41.067 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.070 INFO [main] f.r.c.RobotSetMid[27] constructing RobotSetMid
+19:00:41.073 INFO [main] f.r.c.RobotSetMid[31] constructed
+19:00:41.084 INFO [main] f.r.c.PKCommandBase[60] constructing for RobotSetNear
+19:00:41.087 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.095 INFO [main] f.r.c.RobotSetNear[27] constructing RobotSetNear
+19:00:41.100 INFO [main] f.r.c.RobotSetNear[31] constructed
+19:00:41.110 INFO [main] f.r.c.PKCommandBase[60] constructing for BallevatorLift
+19:00:41.113 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.121 INFO [main] f.r.c.b.BallevatorCommandBase[30] constructing BallevatorLift
+19:00:41.121 INFO [main] f.r.c.b.BallevatorCommandBase[30] constructing BallevatorLift
+19:00:41.127 INFO [main] f.r.c.b.BallevatorCommandBase[36] constructed
+19:00:41.127 INFO [main] f.r.c.b.BallevatorCommandBase[36] constructed
+19:00:41.132 INFO [main] f.r.c.b.BallevatorLift[20] constructing BallevatorLift
+19:00:41.135 INFO [main] f.r.c.b.BallevatorLift[22] constructed
+19:00:41.148 INFO [main] f.r.c.PKCommandBase[60] constructing for BallevatorLower
+19:00:41.152 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.155 INFO [main] f.r.c.b.BallevatorCommandBase[30] constructing BallevatorLower
+19:00:41.155 INFO [main] f.r.c.b.BallevatorCommandBase[30] constructing BallevatorLower
+19:00:41.161 INFO [main] f.r.c.b.BallevatorCommandBase[36] constructed
+19:00:41.161 INFO [main] f.r.c.b.BallevatorCommandBase[36] constructed
+19:00:41.166 INFO [main] f.r.c.b.BallevatorLower[20] constructing BallevatorLower
+19:00:41.169 INFO [main] f.r.c.b.BallevatorLower[22] constructed
+19:00:41.181 INFO [main] f.r.c.PKCommandBase[60] constructing for RobotSetVeryFar
+19:00:41.184 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.186 INFO [main] f.r.c.RobotSetVeryFar[27] constructing RobotSetVeryFar
+19:00:41.191 INFO [main] f.r.c.RobotSetVeryFar[31] constructed
+19:00:41.217 INFO [main] f.r.c.PKCommandBase[60] constructing for TurretPositionBack
+19:00:41.220 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.224 INFO [main] f.r.c.t.TurretCommandBase[30] constructing TurretPositionBack
+19:00:41.226 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:41.230 INFO [main] f.r.c.t.TurretPositionBack[20] constructing TurretPositionBack
+19:00:41.232 INFO [main] f.r.c.t.TurretPositionBack[22] constructed
+19:00:41.257 INFO [main] f.r.c.PKCommandBase[60] constructing for TurretPositionRight
+19:00:41.270 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.276 INFO [main] f.r.c.t.TurretCommandBase[30] constructing TurretPositionRight
+19:00:41.280 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:41.284 INFO [main] f.r.c.t.TurretPositionRight[20] constructing TurretPositionRight
+19:00:41.287 INFO [main] f.r.c.t.TurretPositionRight[22] constructed
+19:00:41.300 INFO [main] f.r.c.PKCommandBase[60] constructing for TurretPositionFront
+19:00:41.303 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.305 INFO [main] f.r.c.t.TurretCommandBase[30] constructing TurretPositionFront
+19:00:41.308 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:41.311 INFO [main] f.r.c.t.TurretPositionFront[20] constructing TurretPositionFront
+19:00:41.314 INFO [main] f.r.c.t.TurretPositionFront[22] constructed
+19:00:41.329 INFO [main] f.r.c.PKCommandBase[60] constructing for TurretRotateCW
+19:00:41.334 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.336 INFO [main] f.r.c.t.TurretCommandBase[30] constructing TurretRotateCW
+19:00:41.339 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:41.341 INFO [main] f.r.c.t.TurretRotateCW[22] constructing TurretRotateCW
+19:00:41.345 INFO [main] f.r.c.t.TurretRotateCW[26] constructed
+19:00:41.356 INFO [main] f.r.c.PKCommandBase[60] constructing for TurretRotateCCW
+19:00:41.359 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.362 INFO [main] f.r.c.t.TurretCommandBase[30] constructing TurretRotateCCW
+19:00:41.365 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:41.367 INFO [main] f.r.c.t.TurretRotateCCW[22] constructing TurretRotateCCW
+19:00:41.377 INFO [main] f.r.c.t.TurretRotateCCW[26] constructed
+19:00:41.429 INFO [main] f.r.c.PKCommandBase[60] constructing for ShooterEnableSpin
+19:00:41.438 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.446 INFO [main] f.r.c.s.ShooterCommandBase[30] constructing ShooterEnableSpin
+19:00:41.457 INFO [main] f.r.c.s.ShooterCommandBase[36] constructed
+19:00:41.471 INFO [main] f.r.c.s.ShooterEnableSpin[24] constructing ShooterEnableSpin
+19:00:41.484 INFO [main] f.r.c.s.ShooterEnableSpin[26] constructed
+19:00:41.554 INFO [main] f.r.c.PKCommandBase[60] constructing for ClimberExtend
+19:00:41.559 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.562 INFO [main] f.r.c.c.ClimberCommandBase[30] constructing ClimberExtend
+19:00:41.568 INFO [main] f.r.c.c.ClimberCommandBase[36] constructed
+19:00:41.574 INFO [main] f.r.c.c.ClimberExtend[20] constructing ClimberExtend
+19:00:41.577 INFO [main] f.r.c.c.ClimberExtend[22] constructed
+19:00:41.595 INFO [main] f.r.c.PKCommandBase[60] constructing for ClimberClimb
+19:00:41.597 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.600 INFO [main] f.r.c.c.ClimberCommandBase[30] constructing ClimberClimb
+19:00:41.607 INFO [main] f.r.c.c.ClimberCommandBase[36] constructed
+19:00:41.610 INFO [main] f.r.c.c.ClimberClimb[23] constructing ClimberClimb
+19:00:41.620 INFO [main] f.r.c.c.ClimberClimb[25] constructed
+19:00:41.714 INFO [main] f.r.c.PKCommandBase[60] constructing for FirePoseVision
+19:00:41.715 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.716 INFO [main] f.r.c.FirePoseVision[38] constructing FirePoseVision
+19:00:41.730 INFO [main] f.r.c.FirePoseVision[49] constructed FirePoseVision
+19:00:41.740 INFO [main] f.r.c.PKCommandBase[60] constructing for ShooterEnableSpin
+19:00:41.743 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.750 INFO [main] f.r.c.s.ShooterCommandBase[30] constructing ShooterEnableSpin
+19:00:41.753 INFO [main] f.r.c.s.ShooterCommandBase[36] constructed
+19:00:41.757 INFO [main] f.r.c.s.ShooterEnableSpin[24] constructing ShooterEnableSpin
+19:00:41.766 INFO [main] f.r.c.s.ShooterEnableSpin[26] constructed
+19:00:41.802 INFO [main] f.r.c.PKCommandBase[60] constructing for WheelRunClockwise
+19:00:41.806 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.815 INFO [main] f.r.c.w.WheelCommandBase[30] constructing WheelRunClockwise
+19:00:41.818 INFO [main] f.r.c.w.WheelCommandBase[36] constructed
+19:00:41.830 INFO [main] f.r.c.w.WheelRunClockwise[23] constructing WheelRunClockwise
+19:00:41.834 INFO [main] f.r.c.w.WheelRunClockwise[25] constructed
+19:00:41.874 INFO [main] f.r.c.PKCommandBase[60] constructing for WheelRunCounterClockwise
+19:00:41.877 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:41.885 INFO [main] f.r.c.w.WheelCommandBase[30] constructing WheelRunCounterClockwise
+19:00:41.892 INFO [main] f.r.c.w.WheelCommandBase[36] constructed
+19:00:41.901 INFO [main] f.r.c.w.WheelRunCounterClockwise[23] constructing WheelRunCounterClockwise
+19:00:41.910 INFO [main] f.r.c.w.WheelRunCounterClockwise[25] constructed
+19:00:42.000 INFO [main] f.r.c.PKCommandBase[60] constructing for InvalidButton
+19:00:42.010 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.016 INFO [main] f.r.c.InvalidButton[27] constructing InvalidButton
+19:00:42.024 WARN [main] f.r.c.InvalidButton[31] Invalid/unused button reserved17Button
+19:00:42.029 INFO [main] f.r.c.PKCommandBase[60] constructing for InvalidButton
+19:00:42.033 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.038 INFO [main] f.r.c.InvalidButton[27] constructing InvalidButton
+19:00:42.044 WARN [main] f.r.c.InvalidButton[31] Invalid/unused button reserved18Button
+19:00:42.112 INFO [main] f.r.c.PKCommandBase[60] constructing for DoNothing
+19:00:42.118 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.128 INFO [main] f.r.c.DoNothing[20] constructing DoNothing
+19:00:42.213 INFO [main] f.r.c.PKCommandBase[60] constructing for AutoFirePosePreset
+19:00:42.216 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.220 INFO [main] f.r.c.AutoFirePosePreset[39] constructing AutoFirePosePreset
+19:00:42.228 INFO [main] f.r.c.AutoFirePosePreset[47] constructed AutoFirePosePreset
+19:00:42.332 INFO [main] f.r.c.PKCommandBase[60] constructing for AutoTurretPositionBack
+19:00:42.341 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.350 INFO [main] f.r.c.t.TurretCommandBase[30] constructing AutoTurretPositionBack
+19:00:42.359 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:42.369 INFO [main] f.r.c.t.AutoTurretPositionBack[20] constructing AutoTurretPositionBack
+19:00:42.379 INFO [main] f.r.c.t.AutoTurretPositionBack[22] constructed
+19:00:42.389 INFO [main] f.r.c.PKCommandBase[60] constructing for TurretVisionAlign
+19:00:42.396 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.403 INFO [main] f.r.c.t.TurretCommandBase[30] constructing TurretVisionAlign
+19:00:42.410 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:42.416 INFO [main] f.r.c.t.TurretVisionAlign[25] constructing TurretVisionAlign
+19:00:42.423 INFO [main] f.r.c.t.TurretVisionAlign[29] constructed
+19:00:42.438 INFO [main] f.r.c.PKSequentialCommandGroup[44] constructing for PKSequentialCommandGroup
+19:00:42.450 INFO [main] f.r.c.PKSequentialCommandGroup[48] constructed
+19:00:42.460 INFO [main] f.r.c.PKParallelCommandGroup[44] constructing for PKParallelCommandGroup
+19:00:42.471 INFO [main] f.r.c.PKParallelCommandGroup[48] constructed
+19:00:42.537 INFO [main] f.r.c.PKCommandBase[60] constructing for IngestPose
+19:00:42.546 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.554 INFO [main] f.r.c.IngestPose[28] constructing IngestPose
+19:00:42.565 INFO [main] f.r.c.IngestPose[35] constructed IngestPose
+19:00:42.618 INFO [main] f.r.c.PKCommandBase[60] constructing for DriveForwardDistance
+19:00:42.627 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.636 INFO [main] f.r.c.d.DriveCommandBase[30] constructing DriveForwardDistance
+19:00:42.644 INFO [main] f.r.c.d.DriveCommandBase[36] constructed
+19:00:42.654 INFO [main] f.r.c.d.DriveForwardDistance[30] constructing DriveForwardDistance
+19:00:42.666 INFO [main] f.r.c.d.DriveForwardDistance[36] constructed
+19:00:42.677 INFO [main] f.r.c.PKParallelCommandGroup[44] constructing for AutoFullTrench
+19:00:42.686 INFO [main] f.r.c.PKParallelCommandGroup[48] constructed
+19:00:42.736 INFO [main] f.r.c.PKCommandBase[60] constructing for AutoFirePosePreset
+19:00:42.749 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.760 INFO [main] f.r.c.AutoFirePosePreset[39] constructing AutoFirePosePreset
+19:00:42.772 INFO [main] f.r.c.AutoFirePosePreset[47] constructed AutoFirePosePreset
+19:00:42.785 INFO [main] f.r.c.PKCommandBase[60] constructing for AutoTurretPositionBack
+19:00:42.792 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.798 INFO [main] f.r.c.t.TurretCommandBase[30] constructing AutoTurretPositionBack
+19:00:42.805 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:42.811 INFO [main] f.r.c.t.AutoTurretPositionBack[20] constructing AutoTurretPositionBack
+19:00:42.823 INFO [main] f.r.c.t.AutoTurretPositionBack[22] constructed
+19:00:42.836 INFO [main] f.r.c.PKCommandBase[60] constructing for TurretVisionAlign
+19:00:42.848 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.855 INFO [main] f.r.c.t.TurretCommandBase[30] constructing TurretVisionAlign
+19:00:42.860 INFO [main] f.r.c.t.TurretCommandBase[36] constructed
+19:00:42.867 INFO [main] f.r.c.t.TurretVisionAlign[25] constructing TurretVisionAlign
+19:00:42.875 INFO [main] f.r.c.t.TurretVisionAlign[29] constructed
+19:00:42.879 INFO [main] f.r.c.PKSequentialCommandGroup[44] constructing for PKSequentialCommandGroup
+19:00:42.881 INFO [main] f.r.c.PKSequentialCommandGroup[48] constructed
+19:00:42.887 INFO [main] f.r.c.PKParallelCommandGroup[44] constructing for PKParallelCommandGroup
+19:00:42.892 INFO [main] f.r.c.PKParallelCommandGroup[48] constructed
+19:00:42.896 INFO [main] f.r.c.PKCommandBase[60] constructing for IngestPose
+19:00:42.900 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.904 INFO [main] f.r.c.IngestPose[28] constructing IngestPose
+19:00:42.908 INFO [main] f.r.c.IngestPose[35] constructed IngestPose
+19:00:42.914 INFO [main] f.r.c.PKCommandBase[60] constructing for DriveForwardDistance
+19:00:42.918 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.922 INFO [main] f.r.c.d.DriveCommandBase[30] constructing DriveForwardDistance
+19:00:42.926 INFO [main] f.r.c.d.DriveCommandBase[36] constructed
+19:00:42.930 INFO [main] f.r.c.d.DriveForwardDistance[30] constructing DriveForwardDistance
+19:00:42.934 INFO [main] f.r.c.d.DriveForwardDistance[36] constructed
+19:00:42.939 INFO [main] f.r.c.PKParallelCommandGroup[44] constructing for AutoFullShort
+19:00:42.946 INFO [main] f.r.c.PKParallelCommandGroup[48] constructed
+19:00:42.977 INFO [main] f.r.c.PKCommandBase[60] constructing for DriveForwardTimed
+19:00:42.981 INFO [main] f.r.c.PKCommandBase[64] constructed
+19:00:42.985 INFO [main] f.r.c.d.DriveCommandBase[30] constructing DriveForwardTimed
+19:00:42.989 INFO [main] f.r.c.d.DriveCommandBase[36] constructed
+19:00:42.992 INFO [main] f.r.c.d.DriveForwardTimed[26] constructing DriveForwardTimed
+19:00:42.996 INFO [main] f.r.c.d.DriveForwardTimed[28] constructed
+19:00:43.139 INFO [main] f.r.Robot[132] initialized
+19:00:43.168 INFO [main] f.r.Robot[215] disabling
+19:00:43.170 INFO [main] f.r.Robot[239] disabled
+20:47:43.262 INFO [main] f.r.Robot[349] initializing teleop
+20:47:43.264 INFO [main] f.r.s.t.BaseTurretSubsystem[85] new preferences for Turret:
+20:47:43.265 INFO [main] f.r.s.t.BaseTurretSubsystem[87] Turret.P = 0.5
+20:47:43.267 INFO [main] f.r.s.t.BaseTurretSubsystem[90] Turret.I = 0.005
+20:47:43.268 INFO [main] f.r.s.t.BaseTurretSubsystem[93] Turret.D = 1.0
+20:47:43.269 INFO [main] f.r.s.t.BaseTurretSubsystem[96] Turret.F = 0.0
+20:47:43.275 INFO [main] f.r.s.s.BaseShooterSubsystem[85] new preferences for Shooter:
+20:47:43.277 INFO [main] f.r.s.s.BaseShooterSubsystem[87] Shooter.P = 0.002
+20:47:43.280 INFO [main] f.r.s.s.BaseShooterSubsystem[90] Shooter.I = 0.0
+20:47:43.282 INFO [main] f.r.s.s.BaseShooterSubsystem[93] Shooter.D = 1.0
+20:47:43.284 INFO [main] f.r.s.s.BaseShooterSubsystem[96] Shooter.F = 2.0E-4
+20:47:43.294 INFO [main] f.r.Robot[372] initialized teleop
+20:47:43.296 INFO [main] f.r.Robot[382] first run of teleop periodic
+20:47:43.315 INFO [main] f.r.Robot[215] disabling
+20:47:43.317 INFO [main] f.r.Robot[239] disabled
+20:47:51.982 INFO [main] f.r.Robot[349] initializing teleop
+20:47:51.983 INFO [main] f.r.s.t.BaseTurretSubsystem[85] new preferences for Turret:
+20:47:51.985 INFO [main] f.r.s.t.BaseTurretSubsystem[87] Turret.P = 0.5
+20:47:51.986 INFO [main] f.r.s.t.BaseTurretSubsystem[90] Turret.I = 0.005
+20:47:51.988 INFO [main] f.r.s.t.BaseTurretSubsystem[93] Turret.D = 1.0
+20:47:51.989 INFO [main] f.r.s.t.BaseTurretSubsystem[96] Turret.F = 0.0
+20:47:51.995 INFO [main] f.r.s.s.BaseShooterSubsystem[85] new preferences for Shooter:
+20:47:51.996 INFO [main] f.r.s.s.BaseShooterSubsystem[87] Shooter.P = 0.002
+20:47:51.998 INFO [main] f.r.s.s.BaseShooterSubsystem[90] Shooter.I = 0.0
+20:47:52.001 INFO [main] f.r.s.s.BaseShooterSubsystem[93] Shooter.D = 1.0
+20:47:52.002 INFO [main] f.r.s.s.BaseShooterSubsystem[96] Shooter.F = 2.0E-4
+20:47:52.012 INFO [main] f.r.Robot[372] initialized teleop
+20:47:52.014 INFO [main] f.r.Robot[382] first run of teleop periodic
+20:47:52.034 INFO [main] f.r.Robot[215] disabling
+20:47:52.036 INFO [main] f.r.Robot[239] disabled
+20:47:57.462 INFO [main] f.r.Robot[349] initializing teleop
+20:47:57.464 INFO [main] f.r.s.t.BaseTurretSubsystem[85] new preferences for Turret:
+20:47:57.465 INFO [main] f.r.s.t.BaseTurretSubsystem[87] Turret.P = 0.5
+20:47:57.466 INFO [main] f.r.s.t.BaseTurretSubsystem[90] Turret.I = 0.005
+20:47:57.468 INFO [main] f.r.s.t.BaseTurretSubsystem[93] Turret.D = 1.0
+20:47:57.469 INFO [main] f.r.s.t.BaseTurretSubsystem[96] Turret.F = 0.0
+20:47:57.476 INFO [main] f.r.s.s.BaseShooterSubsystem[85] new preferences for Shooter:
+20:47:57.477 INFO [main] f.r.s.s.BaseShooterSubsystem[87] Shooter.P = 0.002
+20:47:57.480 INFO [main] f.r.s.s.BaseShooterSubsystem[90] Shooter.I = 0.0
+20:47:57.482 INFO [main] f.r.s.s.BaseShooterSubsystem[93] Shooter.D = 1.0
+20:47:57.484 INFO [main] f.r.s.s.BaseShooterSubsystem[96] Shooter.F = 2.0E-4
+20:47:57.492 INFO [main] f.r.Robot[372] initialized teleop
+20:47:57.494 INFO [main] f.r.Robot[382] first run of teleop periodic
+20:47:57.510 INFO [main] f.r.Robot[215] disabling
+20:47:57.511 INFO [main] f.r.Robot[239] disabled
+20:48:13.822 INFO [main] f.r.Robot[349] initializing teleop
+20:48:13.823 INFO [main] f.r.s.t.BaseTurretSubsystem[85] new preferences for Turret:
+20:48:13.826 INFO [main] f.r.s.t.BaseTurretSubsystem[87] Turret.P = 0.5
+20:48:13.827 INFO [main] f.r.s.t.BaseTurretSubsystem[90] Turret.I = 0.005
+20:48:13.829 INFO [main] f.r.s.t.BaseTurretSubsystem[93] Turret.D = 1.0
+20:48:13.831 INFO [main] f.r.s.t.BaseTurretSubsystem[96] Turret.F = 0.0
+20:48:13.838 INFO [main] f.r.s.s.BaseShooterSubsystem[85] new preferences for Shooter:
+20:48:13.840 INFO [main] f.r.s.s.BaseShooterSubsystem[87] Shooter.P = 0.002
+20:48:13.845 INFO [main] f.r.s.s.BaseShooterSubsystem[90] Shooter.I = 0.0
+20:48:13.846 INFO [main] f.r.s.s.BaseShooterSubsystem[93] Shooter.D = 1.0
+20:48:13.847 INFO [main] f.r.s.s.BaseShooterSubsystem[96] Shooter.F = 2.0E-4
+20:48:13.857 INFO [main] f.r.Robot[372] initialized teleop
+20:48:13.858 INFO [main] f.r.Robot[382] first run of teleop periodic
+20:48:13.873 INFO [main] f.r.Robot[215] disabling
+20:48:13.874 INFO [main] f.r.Robot[239] disabled
