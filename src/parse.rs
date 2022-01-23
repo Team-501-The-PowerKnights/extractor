@@ -1,5 +1,5 @@
 #[derive(Default, Debug)]
-pub struct Log {
+pub struct LogFile {
 	pub real: bool,
 	pub event_name: Option<String>,
 	pub match_type: Option<String>,
@@ -9,40 +9,40 @@ pub struct Log {
 	pub location: Option<u32>,
 }
 
-impl Log {
+impl LogFile {
 	pub fn parse(content: String) -> Self {
-		let mut log = Log::default();
+		let mut log_file = LogFile::default();
 		for line in content.lines() {
-			let words: Vec<&str> = line.split(" ").filter(|w| w != &" " && w != &"").collect();
+			let words: Vec<&str> = line.split(' ').filter(|w| w != &" " && w != &"").collect();
 			if words.len() > 5 {
 				let value = words
 					.iter()
 					.skip(5)
-					.map(|&w| w)
+					.copied()
 					.collect::<Vec<&str>>()
 					.join(" ")
 					.to_string();
 				match words.get(4).unwrap().trim_end_matches(':') {
-					"EventName" => log.event_name = Some(value),
-					"MatchType" => log.match_type = Some(value),
-					"MatchNumber" => log.match_number = Some(value.parse::<u32>().unwrap()),
-					"ReplayNumber" => log.replay_number = Some(value.parse::<u32>().unwrap()),
-					"Alliance" => log.alliance = Some(value),
-					"Location" => log.location = Some(value.parse::<u32>().unwrap()),
+					"EventName" => log_file.event_name = Some(value),
+					"MatchType" => log_file.match_type = Some(value),
+					"MatchNumber" => log_file.match_number = Some(value.parse::<u32>().unwrap()),
+					"ReplayNumber" => log_file.replay_number = Some(value.parse::<u32>().unwrap()),
+					"Alliance" => log_file.alliance = Some(value),
+					"Location" => log_file.location = Some(value.parse::<u32>().unwrap()),
 					_ => (),
 				}
 			}
 		}
 
-		log.real = log.event_name.is_some()
-			&& log.match_type.is_some()
-			&& log.match_number.is_some()
-			&& log.replay_number.is_some()
-			&& log.replay_number.is_some()
-			&& log.alliance.is_some()
-			&& log.location.is_some();
+		log_file.real = log_file.event_name.is_some()
+			&& log_file.match_type.is_some()
+			&& log_file.match_number.is_some()
+			&& log_file.replay_number.is_some()
+			&& log_file.replay_number.is_some()
+			&& log_file.alliance.is_some()
+			&& log_file.location.is_some();
 
-		log
+		log_file
 	}
 }
 
@@ -53,7 +53,7 @@ mod tests {
 
 	use anyhow::Result;
 
-	use super::Log;
+	use super::LogFile;
 
 	const TEST_LOG_DIR: &str = "./test_logs/";
 
@@ -62,56 +62,56 @@ mod tests {
 		let real_files = fs::read_dir(Path::new(TEST_LOG_DIR).join("real"))?;
 		for real_file in real_files {
 			let file = real_file?;
-			let log = Log::parse(fs::read_to_string(&file.path())?);
-			assert!(log.real);
+			let log_file = LogFile::parse(fs::read_to_string(&file.path())?);
+			assert!(log_file.real);
 			match file.file_name().to_str().unwrap() {
 				"1.log" => {
-					assert_eq!(log.event_name, Some(String::from("NHBB")));
-					assert_eq!(log.match_type, Some(String::from("Qualification")));
-					assert_eq!(log.match_number, Some(6));
-					assert_eq!(log.replay_number, Some(1));
-					assert_eq!(log.alliance, Some(String::from("Red")));
-					assert_eq!(log.location, Some(1));
+					assert_eq!(log_file.event_name, Some(String::from("NHBB")));
+					assert_eq!(log_file.match_type, Some(String::from("Qualification")));
+					assert_eq!(log_file.match_number, Some(6));
+					assert_eq!(log_file.replay_number, Some(1));
+					assert_eq!(log_file.alliance, Some(String::from("Red")));
+					assert_eq!(log_file.location, Some(1));
 				}
 				"2.log" => {
-					assert_eq!(log.event_name, Some(String::from("NHBB Worlds")));
-					assert_eq!(log.match_type, Some(String::from("Qualification")));
-					assert_eq!(log.match_number, Some(13));
-					assert_eq!(log.replay_number, Some(1));
-					assert_eq!(log.alliance, Some(String::from("Red")));
-					assert_eq!(log.location, Some(3));
+					assert_eq!(log_file.event_name, Some(String::from("NHBB Worlds")));
+					assert_eq!(log_file.match_type, Some(String::from("Qualification")));
+					assert_eq!(log_file.match_number, Some(13));
+					assert_eq!(log_file.replay_number, Some(1));
+					assert_eq!(log_file.alliance, Some(String::from("Red")));
+					assert_eq!(log_file.location, Some(3));
 				}
 				"3.log" => {
-					assert_eq!(log.event_name, Some(String::from("NHBB")));
-					assert_eq!(log.match_type, Some(String::from("Elimination")));
-					assert_eq!(log.match_number, Some(8));
-					assert_eq!(log.replay_number, Some(1));
-					assert_eq!(log.alliance, Some(String::from("Blue")));
-					assert_eq!(log.location, Some(1));
+					assert_eq!(log_file.event_name, Some(String::from("NHBB")));
+					assert_eq!(log_file.match_type, Some(String::from("Elimination")));
+					assert_eq!(log_file.match_number, Some(8));
+					assert_eq!(log_file.replay_number, Some(1));
+					assert_eq!(log_file.alliance, Some(String::from("Blue")));
+					assert_eq!(log_file.location, Some(1));
 				}
 				"4.log" => {
-					assert_eq!(log.event_name, Some(String::from("NHBB")));
-					assert_eq!(log.match_type, Some(String::from("Elimination")));
-					assert_eq!(log.match_number, Some(4));
-					assert_eq!(log.replay_number, Some(1));
-					assert_eq!(log.alliance, Some(String::from("Blue")));
-					assert_eq!(log.location, Some(1));
+					assert_eq!(log_file.event_name, Some(String::from("NHBB")));
+					assert_eq!(log_file.match_type, Some(String::from("Elimination")));
+					assert_eq!(log_file.match_number, Some(4));
+					assert_eq!(log_file.replay_number, Some(1));
+					assert_eq!(log_file.alliance, Some(String::from("Blue")));
+					assert_eq!(log_file.location, Some(1));
 				}
 				"5.log" => {
-					assert_eq!(log.event_name, Some(String::from("NHBB")));
-					assert_eq!(log.match_type, Some(String::from("Qualification")));
-					assert_eq!(log.match_number, Some(23));
-					assert_eq!(log.replay_number, Some(1));
-					assert_eq!(log.alliance, Some(String::from("Blue")));
-					assert_eq!(log.location, Some(1));
+					assert_eq!(log_file.event_name, Some(String::from("NHBB")));
+					assert_eq!(log_file.match_type, Some(String::from("Qualification")));
+					assert_eq!(log_file.match_number, Some(23));
+					assert_eq!(log_file.replay_number, Some(1));
+					assert_eq!(log_file.alliance, Some(String::from("Blue")));
+					assert_eq!(log_file.location, Some(1));
 				}
 				"6.log" => {
-					assert_eq!(log.event_name, Some(String::from("NHBB")));
-					assert_eq!(log.match_type, Some(String::from("Qualification")));
-					assert_eq!(log.match_number, Some(16));
-					assert_eq!(log.replay_number, Some(1));
-					assert_eq!(log.alliance, Some(String::from("Blue")));
-					assert_eq!(log.location, Some(2));
+					assert_eq!(log_file.event_name, Some(String::from("NHBB")));
+					assert_eq!(log_file.match_type, Some(String::from("Qualification")));
+					assert_eq!(log_file.match_number, Some(16));
+					assert_eq!(log_file.replay_number, Some(1));
+					assert_eq!(log_file.alliance, Some(String::from("Blue")));
+					assert_eq!(log_file.location, Some(2));
 				}
 				_ => (),
 			}
@@ -123,7 +123,7 @@ mod tests {
 	fn test_fake_parse() -> Result<()> {
 		let fake_files = fs::read_dir(Path::new(TEST_LOG_DIR).join("fake"))?;
 		for fake_file in fake_files {
-			assert!(!Log::parse(fs::read_to_string(fake_file?.path())?).real)
+			assert!(!LogFile::parse(fs::read_to_string(fake_file?.path())?).real)
 		}
 		Ok(())
 	}

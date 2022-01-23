@@ -3,7 +3,7 @@ use std::fs;
 use conf::Configuration;
 
 use log::{info, LevelFilter};
-use parse::Log;
+use parse::LogFile;
 use simplelog::{ColorChoice, Config, TermLogger, TerminalMode};
 
 mod conf;
@@ -19,7 +19,7 @@ fn main() {
 	)
 	.expect("Failed to configure logger");
 
-	let log = Log::parse(
+	let log = LogFile::parse(
 		fs::read_to_string("./test_logs/logfile-022.log").expect("Failed to read log file"),
 	);
 	println!("{:?}", log);
