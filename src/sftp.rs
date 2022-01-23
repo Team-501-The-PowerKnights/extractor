@@ -17,6 +17,7 @@ pub fn setup(config: &Configuration) -> Result<()> {
 	Ok(())
 }
 
+/// Sync the files and then delete them from the source if enabled in configuration file.
 pub fn sync(config: &Configuration) -> Result<()> {
 	let loc = format!(
 		"{}@{}.local:{}",
@@ -27,12 +28,14 @@ pub fn sync(config: &Configuration) -> Result<()> {
 		.arg(&loc)
 		.arg(&config.destination)
 		.status()?;
-	let mut second_command = Command::new("sftp").arg(&loc).spawn()?;
-	second_command
-		.stdin
-		.as_mut()
-		.unwrap()
-		.write_all("rm logfile-*".as_bytes())?;
-	second_command.wait()?;
+	if config.remove {
+		let mut remove_command = Command::new("sftp").arg(&loc).spawn()?;
+		remove_command
+			.stdin
+			.as_mut()
+			.unwrap()
+			.write_all("rm logfile-*".as_bytes())?;
+		remove_command.wait()?;
+	}
 	Ok(())
 }

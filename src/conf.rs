@@ -16,6 +16,8 @@ pub struct Configuration {
 	pub username: String,
 	#[serde(default = "defaults::password")]
 	pub password: String,
+	#[serde(default = "defaults::remove")]
+	pub remove: bool,
 }
 
 mod defaults {
@@ -25,6 +27,7 @@ mod defaults {
 	pub fn port() -> u32 { 22 }
 	pub fn username() -> String { String::from("lvuser") }
 	pub fn destination() -> PathBuf { dirs::desktop_dir().unwrap().join("extractor_logs") }
+	pub fn remove() -> bool { false }
 }
 
 impl Configuration {
