@@ -20,9 +20,9 @@ fn main() {
 	.expect("Failed to configure logger");
 
 	let log = LogFile::parse(
-		fs::read_to_string("./test_logs/logfile-022.log").expect("Failed to read log file"),
+		fs::read_to_string("./test_logs/real/1.log").expect("Failed to read log file"),
 	);
-	println!("{:?}", log);
+	println!("{:?}", log.new_filename());
 
 	// let config = Configuration::read().expect("Failed to read from configuration file");
 	// info!("Loaded configuration file");
