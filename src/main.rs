@@ -19,15 +19,46 @@ fn main() {
 	)
 	.expect("Failed to configure logger");
 
-	let log = LogFile::parse(
-		fs::read_to_string("./test_logs/real/1.log").expect("Failed to read log file"),
-	);
-	println!("{:?}", log.new_filename());
+	let config = Configuration::read().expect("Failed to read configuration file");
+	info!("Loaded configuration file");
 
-	// let config = Configuration::read().expect("Failed to read from configuration file");
-	// info!("Loaded configuration file");
-	// sftp::setup(&config).expect("Failed to setup for sftp usage");
-	// info!("Setup for SFTP");
-	// sftp::sync(&config).expect("Failed to run sftp");
-	// info!("SUCCESS\n\tTransferred and removed files")
+	sftp::setup(&config).expect("Failed to setup for sftp usage");
+	info!("Setup for SFTP");
+
+	info!("Starting SFTP");
+	sftp::sync(&config).expect("Failed to run sftp");
+	info!("SUCCESS\n\tTransferred and removed files");
+
+	for raw_file in fs::read_dir(&config.destination).expect("Failed to read destination directory")
+	{
+		let file = raw_file.expect("Failed to load log file");
+		if file
+			.metadata()
+			.expect("Failed to load metadata for file")
+			.is_file() && file.file_name() != *".DS_Store"
+		{
+			let log_file = LogFile::parse(fs::read_to_string(file.path()).unwrap_or_else(|_| {
+				panic!(
+					"Failed to read from log file: {}",
+					file.file_name().to_str().unwrap()
+				)
+			}));
+			if log_file.real {
+				let event_folder = &config
+					.destination
+					.as_path()
+					.join(log_file.event_name.as_ref().unwrap());
+				let new_filename = log_file.new_filename();
+				fs::create_dir_all(event_folder).expect("Failed to create folder for event");
+				fs::write(event_folder.join(&new_filename), log_file.content)
+					.expect("Failed to write file");
+				fs::remove_file(file.path()).expect("Failed to delete log file");
+				info!(
+					"Detected real log file: {} => {}",
+					file.file_name().to_str().unwrap(),
+					&new_filename.to_str().unwrap()
+				);
+			}
+		}
+	}
 }

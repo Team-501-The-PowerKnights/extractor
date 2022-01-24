@@ -167,16 +167,16 @@ mod tests {
 		assert!(LogFile {
 			content: String::new(),
 			real: true,
-			event_name: Some(String::from("NHBB Worlds")),
-			match_type: Some(String::from("Elimination")),
-			match_number: Some(12),
+			event_name: Some(String::from("NHBB")),
+			match_type: Some(String::from("Qualification")),
+			match_number: Some(6),
 			replay_number: Some(1),
-			alliance: Some(String::from("Blue")),
-			location: Some(3),
+			alliance: Some(String::from("Red")),
+			location: Some(1),
 		}
 		.new_filename()
 		.to_str()
 		.unwrap()
-		.ends_with("_NHBB Worlds_E-12-01_B3.log"));
+		.ends_with("_NHBB_Q-06-01_R1.log"));
 	}
 }
