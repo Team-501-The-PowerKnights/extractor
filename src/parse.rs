@@ -4,7 +4,6 @@ use chrono::Local;
 
 #[derive(Default, Debug)]
 pub struct LogFile {
-	pub content: String,
 	pub real: bool,
 	pub event_name: Option<String>,
 	pub match_type: Option<String>,
@@ -39,7 +38,6 @@ impl LogFile {
 			}
 		}
 
-		log_file.content = content;
 		log_file.real = log_file.event_name.is_some()
 			&& log_file.match_type.is_some()
 			&& log_file.match_number.is_some()
@@ -150,7 +148,6 @@ mod tests {
 	#[test]
 	fn test_new_filename() {
 		assert!(LogFile {
-			content: String::new(),
 			real: true,
 			event_name: Some(String::from("NHBB")),
 			match_type: Some(String::from("Qualification")),
@@ -165,7 +162,6 @@ mod tests {
 		.ends_with("_NHBB_Q-06-01_R1.log"));
 
 		assert!(LogFile {
-			content: String::new(),
 			real: true,
 			event_name: Some(String::from("NHBB")),
 			match_type: Some(String::from("Qualification")),

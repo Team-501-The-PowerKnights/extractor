@@ -29,6 +29,7 @@ fn main() {
 	sftp::sync(&config).expect("Failed to run sftp");
 	info!("SUCCESS\n\tTransferred and removed files");
 
+	let mut real_logs = 0;
 	for raw_file in fs::read_dir(&config.destination).expect("Failed to read destination directory")
 	{
 		let file = raw_file.expect("Failed to load log file");
@@ -50,15 +51,19 @@ fn main() {
 					.join(log_file.event_name.as_ref().unwrap());
 				let new_filename = log_file.new_filename();
 				fs::create_dir_all(event_folder).expect("Failed to create folder for event");
-				fs::write(event_folder.join(&new_filename), log_file.content)
-					.expect("Failed to write file");
-				fs::remove_file(file.path()).expect("Failed to delete log file");
+				fs::rename(file.path(), event_folder.join(log_file.new_filename()))
+					.expect("Failed to rename real log file to new name");
 				info!(
 					"Detected real log file: {} => {}",
 					file.file_name().to_str().unwrap(),
 					&new_filename.to_str().unwrap()
 				);
+				real_logs += 1;
+			} else {
+				fs::remove_file(file.path()).expect("Failed to delete fake log file");
 			}
 		}
 	}
+	println!();
+	info!("Found {} real log files", real_logs);
 }
