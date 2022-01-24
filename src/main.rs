@@ -1,4 +1,5 @@
 use std::fs;
+use std::path::PathBuf;
 
 use conf::Configuration;
 
@@ -45,10 +46,12 @@ fn main() {
 				)
 			}));
 			if log_file.real {
-				let event_folder = &config
-					.destination
-					.as_path()
-					.join(log_file.event_name.as_ref().unwrap());
+				let event_folder = &config.destination.as_path().join(
+					config
+						.real_logs_location
+						.as_ref()
+						.unwrap_or(&PathBuf::from(log_file.event_name.as_ref().unwrap())),
+				);
 				let new_filename = log_file.new_filename();
 				fs::create_dir_all(event_folder).expect("Failed to create folder for event");
 				fs::rename(file.path(), event_folder.join(log_file.new_filename()))

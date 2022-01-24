@@ -18,6 +18,7 @@ pub struct Configuration {
 	pub password: String,
 	#[serde(default = "defaults::remove")]
 	pub remove: bool,
+	pub real_logs_location: Option<PathBuf>,
 }
 
 mod defaults {
