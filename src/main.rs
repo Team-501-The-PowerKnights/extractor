@@ -27,11 +27,19 @@ fn main() {
 	info!("Setup for SFTP");
 
 	info!("Starting SFTP");
-	sftp::sync(&config).expect("Failed to run sftp");
-	info!("SUCCESS\n\tTransferred and removed files");
+	let removed = sftp::sync(&config).expect("Failed to run sftp");
+	info!(
+		"Transferred {}files",
+		if removed { "and removed " } else { "" }
+	);
 
 	let mut real_logs = 0;
-	for raw_file in fs::read_dir(&config.destination).expect("Failed to read destination directory")
+	for raw_file in fs::read_dir(
+		&config
+			.destination_folder
+			.join(&config.source_folder.iter().last().unwrap()),
+	)
+	.expect("Failed to read destination directory")
 	{
 		let file = raw_file.expect("Failed to load log file");
 		if file
@@ -46,7 +54,7 @@ fn main() {
 				)
 			}));
 			if log_file.real {
-				let event_folder = &config.destination.as_path().join(
+				let event_folder = &config.destination_folder.as_path().join(
 					config
 						.real_logs_location
 						.as_ref()
