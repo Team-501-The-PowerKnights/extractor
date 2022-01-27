@@ -1,5 +1,5 @@
-use std::fs;
 use std::path::PathBuf;
+use std::{env, fs};
 
 use anyhow::Result;
 use serde::Deserialize;
@@ -33,11 +33,7 @@ mod defaults {
 
 impl Configuration {
 	pub fn read() -> Result<Self> {
-		let loc = dirs::home_dir()
-			.unwrap()
-			.join(".config")
-			.join("extractor")
-			.join("conf.toml");
+		let loc = env::current_dir().unwrap().join("conf.toml");
 		let content = fs::read_to_string(loc)?;
 		Ok(toml::from_str(&content)?)
 	}
