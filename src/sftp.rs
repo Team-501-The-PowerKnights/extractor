@@ -26,7 +26,6 @@ pub fn sync(config: &Configuration) -> Result<bool> {
 		config.source_folder.display()
 	);
 	Command::new("sftp")
-		.arg("-r")
 		.arg(&loc)
 		.arg(&config.destination_folder)
 		.status()?;

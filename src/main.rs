@@ -1,5 +1,4 @@
 use std::fs;
-use std::path::PathBuf;
 
 use conf::Configuration;
 
@@ -33,13 +32,32 @@ fn main() {
 		if removed { "and removed " } else { "" }
 	);
 
+	// Moving log files to parent folder
+	let transferred_folder = config
+		.destination_folder
+		.join(config.source_folder.iter().last().unwrap());
+	println!("{}", transferred_folder.display());
+	let log_files = fs::read_dir(&transferred_folder).expect("Failed to read transferred folder");
+	for file in log_files {
+		let verified_file = file.expect("Failed to load file");
+		let file_path = &verified_file.path();
+		fs::rename(
+			file_path,
+			file_path
+				.parent()
+				.unwrap()
+				.parent()
+				.unwrap()
+				.join(verified_file.file_name()),
+		)
+		.expect("Failed to move log file up to source folder");
+	}
+	fs::remove_dir(&transferred_folder).expect("Failed to create transferred folder");
+
+	// Find real log files to move it
 	let mut real_logs = 0;
-	for raw_file in fs::read_dir(
-		&config
-			.destination_folder
-			.join(&config.source_folder.iter().last().unwrap()),
-	)
-	.expect("Failed to read destination directory")
+	for raw_file in
+		fs::read_dir(&config.destination_folder).expect("Failed to read destination directory")
 	{
 		let file = raw_file.expect("Failed to load log file");
 		if file
@@ -54,15 +72,11 @@ fn main() {
 				)
 			}));
 			if log_file.real {
-				let event_folder = &config.destination_folder.as_path().join(
-					config
-						.real_logs_location
-						.as_ref()
-						.unwrap_or(&PathBuf::from(log_file.event_name.as_ref().unwrap())),
-				);
+				let real_logs_folder = &config.real_logs_folder;
 				let new_filename = log_file.new_filename();
-				fs::create_dir_all(event_folder).expect("Failed to create folder for event");
-				fs::rename(file.path(), event_folder.join(log_file.new_filename()))
+				fs::create_dir_all(real_logs_folder)
+					.expect("Failed to create folder for real log files");
+				fs::rename(file.path(), real_logs_folder.join(log_file.new_filename()))
 					.expect("Failed to rename real log file to new name");
 				info!(
 					"Detected real log file: {} => {}",
@@ -70,8 +84,6 @@ fn main() {
 					&new_filename.to_str().unwrap()
 				);
 				real_logs += 1;
-			} else {
-				fs::remove_file(file.path()).expect("Failed to delete fake log file");
 			}
 		}
 	}

@@ -18,17 +18,20 @@ pub struct Configuration {
 	pub password: String,
 	#[serde(default = "defaults::remove")]
 	pub remove: bool,
-	pub real_logs_location: Option<PathBuf>,
+	#[serde(default = "defaults::real_logs_folder")]
+	pub real_logs_folder: PathBuf,
 }
 
 mod defaults {
+	use std::env;
 	use std::path::PathBuf;
 
 	pub fn password() -> String { String::from("") }
 	pub fn port() -> u32 { 22 }
 	pub fn username() -> String { String::from("lvuser") }
-	pub fn destination_folder() -> PathBuf { dirs::desktop_dir().unwrap().join("extractor_logs") }
+	pub fn destination_folder() -> PathBuf { env::current_dir().unwrap().join("source") }
 	pub fn remove() -> bool { false }
+	pub fn real_logs_folder() -> PathBuf { env::current_dir().unwrap().join("real") }
 }
 
 impl Configuration {
