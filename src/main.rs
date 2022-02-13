@@ -22,6 +22,8 @@ fn main() {
 	let config = Configuration::read().expect("Failed to read configuration file");
 	info!("Loaded configuration file");
 
+	println!("{:?}", config);
+
 	sftp::setup(&config).expect("Failed to setup for sftp usage");
 	info!("Setup for SFTP");
 
@@ -31,28 +33,6 @@ fn main() {
 		"Transferred {}files",
 		if removed { "and removed " } else { "" }
 	);
-
-	// Moving log files to parent folder
-	let transferred_folder = config
-		.destination_folder
-		.join(config.source_folder.iter().last().unwrap());
-	println!("{}", transferred_folder.display());
-	let log_files = fs::read_dir(&transferred_folder).expect("Failed to read transferred folder");
-	for file in log_files {
-		let verified_file = file.expect("Failed to load file");
-		let file_path = &verified_file.path();
-		fs::rename(
-			file_path,
-			file_path
-				.parent()
-				.unwrap()
-				.parent()
-				.unwrap()
-				.join(verified_file.file_name()),
-		)
-		.expect("Failed to move log file up to source folder");
-	}
-	fs::remove_dir(&transferred_folder).expect("Failed to create transferred folder");
 
 	// Find real log files to move it
 	let mut real_logs = 0;
@@ -89,4 +69,6 @@ fn main() {
 	}
 	println!();
 	info!("Found {} real log files", real_logs);
+
+	loop {}
 }

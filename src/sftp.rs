@@ -2,7 +2,7 @@ use std::fs;
 use std::io::Write;
 use std::process::Command;
 
-use anyhow::Result;
+use anyhow::{bail, Result};
 use log::info;
 use which::which;
 
@@ -25,10 +25,14 @@ pub fn sync(config: &Configuration) -> Result<bool> {
 		config.hostname,
 		config.source_folder.display()
 	);
-	Command::new("sftp")
+	let status = Command::new("sftp")
+		.arg("-r")
 		.arg(&loc)
 		.arg(&config.destination_folder)
 		.status()?;
+	if !status.success() {
+		bail!("Failed to run stfp command with {}", status.to_string());
+	}
 
 	if config.remove {
 		let mut remove_command = Command::new("sftp").arg(&loc).spawn()?;
@@ -37,7 +41,13 @@ pub fn sync(config: &Configuration) -> Result<bool> {
 			.as_mut()
 			.unwrap()
 			.write_all("rm logfile-*".as_bytes())?;
-		remove_command.wait()?;
+		let status = remove_command.wait()?;
+		if !status.success() {
+			bail!(
+				"Failed to remove files from destination with {}",
+				status.to_string()
+			);
+		}
 		return Ok(true);
 	}
 	Ok(false)
