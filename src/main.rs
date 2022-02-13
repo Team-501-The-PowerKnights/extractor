@@ -1,4 +1,5 @@
-use std::fs;
+use std::time::Duration;
+use std::{fs, thread};
 
 use conf::Configuration;
 
@@ -68,5 +69,5 @@ fn main() {
 	println!();
 	info!("Found {} real log files", real_logs);
 
-	loop {}
+	thread::sleep(Duration::from_secs_f64(f64::INFINITY));
 }
