@@ -22,8 +22,6 @@ fn main() {
 	let config = Configuration::read().expect("Failed to read configuration file");
 	info!("Loaded configuration file");
 
-	println!("{:?}", config);
-
 	sftp::setup(&config).expect("Failed to setup for sftp usage");
 	info!("Setup for SFTP");
 
@@ -34,7 +32,7 @@ fn main() {
 		if removed { "and removed " } else { "" }
 	);
 
-	// Find real log files to move it
+	// Find real log files to move
 	let mut real_logs = 0;
 	for raw_file in
 		fs::read_dir(&config.destination_folder).expect("Failed to read destination directory")
