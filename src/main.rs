@@ -69,5 +69,5 @@ fn main() {
 	println!();
 	info!("Found {} real log files", real_logs);
 
-	thread::sleep(Duration::from_secs_f64(f64::INFINITY));
+	thread::sleep(Duration::from_secs(1000000));
 }

@@ -27,6 +27,8 @@ pub fn sync(config: &Configuration) -> Result<bool> {
 	);
 	let status = Command::new("sftp")
 		.arg("-r")
+		.arg("-o")
+		.arg("StrictHostKeyChecking=no")
 		.arg(&loc)
 		.arg(&config.destination_folder)
 		.status()?;
@@ -35,7 +37,11 @@ pub fn sync(config: &Configuration) -> Result<bool> {
 	}
 
 	if config.remove {
-		let mut remove_command = Command::new("sftp").arg(&loc).spawn()?;
+		let mut remove_command = Command::new("sftp")
+			.arg("-o")
+			.arg("StrictHostKeyChecking=no")
+			.arg(&loc)
+			.spawn()?;
 		remove_command
 			.stdin
 			.as_mut()
